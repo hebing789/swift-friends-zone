@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        可以对比着2中区别
 //        let nav = UINavigationController(rootViewController: mainTabContrller)
         
+        window?.backgroundColor=UIColor.white
         window?.rootViewController=mainTabContrller
         window?.makeKeyAndVisible()
         

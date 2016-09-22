@@ -64,7 +64,7 @@ class HBTabBar: UITabBar {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func cententClickToChange() -> () {
+   @objc private func cententClickToChange() -> () {
         
         
         

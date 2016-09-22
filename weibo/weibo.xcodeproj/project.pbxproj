@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B026AAF1D942A5E00563236 /* HBBaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B026AAE1D942A5E00563236 /* HBBaseNavController.swift */; };
+		5B026AB11D942C6600563236 /* HBTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B026AB01D942C6600563236 /* HBTestViewController.swift */; };
+		5B026AB31D942F1200563236 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B026AB21D942F1200563236 /* UIBarButtonItem.swift */; };
+		5B026AB51D94351B00563236 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B026AB41D94351B00563236 /* SearchView.xib */; };
+		5B026AB71D94353900563236 /* HBSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B026AB61D94353900563236 /* HBSearchButton.swift */; };
+		5B026AB91D9435C400563236 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B026AB81D9435C400563236 /* UIView+extension.swift */; };
 		5B6ED9281D93FD1D003C114B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ED9271D93FD1D003C114B /* AppDelegate.swift */; };
 		5B6ED9511D940227003C114B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6ED9501D940227003C114B /* Assets.xcassets */; };
 		5B6ED9551D9403A9003C114B /* HBDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ED9541D9403A9003C114B /* HBDiscoverController.swift */; };
@@ -18,6 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B026AAE1D942A5E00563236 /* HBBaseNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBBaseNavController.swift; sourceTree = "<group>"; };
+		5B026AB01D942C6600563236 /* HBTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBTestViewController.swift; sourceTree = "<group>"; };
+		5B026AB21D942F1200563236 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
+		5B026AB41D94351B00563236 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		5B026AB61D94353900563236 /* HBSearchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSearchButton.swift; sourceTree = "<group>"; };
+		5B026AB81D9435C400563236 /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		5B6ED9241D93FD1D003C114B /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B6ED9271D93FD1D003C114B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B6ED9331D93FD1D003C114B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +102,7 @@
 		5B6ED93B1D93FF31003C114B /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				5B026AB01D942C6600563236 /* HBTestViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -97,6 +110,8 @@
 		5B6ED93C1D93FF31003C114B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				5B026AB21D942F1200563236 /* UIBarButtonItem.swift */,
+				5B026AB81D9435C400563236 /* UIView+extension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -125,6 +140,8 @@
 		5B6ED93F1D93FF31003C114B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5B026AB41D94351B00563236 /* SearchView.xib */,
+				5B026AB61D94353900563236 /* HBSearchButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				5B6ED95C1D94042E003C114B /* HBTabBarController.swift */,
+				5B026AAE1D942A5E00563236 /* HBBaseNavController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -301,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B026AB51D94351B00563236 /* SearchView.xib in Resources */,
 				5B6ED9511D940227003C114B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,8 +333,13 @@
 			files = (
 				5B6ED9551D9403A9003C114B /* HBDiscoverController.swift in Sources */,
 				5B6ED95B1D9403EF003C114B /* HBMessageController.swift in Sources */,
+				5B026AAF1D942A5E00563236 /* HBBaseNavController.swift in Sources */,
+				5B026AB11D942C6600563236 /* HBTestViewController.swift in Sources */,
+				5B026AB71D94353900563236 /* HBSearchButton.swift in Sources */,
 				5B6ED9571D9403BF003C114B /* HBHomeController.swift in Sources */,
+				5B026AB91D9435C400563236 /* UIView+extension.swift in Sources */,
 				5B6ED95D1D94042E003C114B /* HBTabBarController.swift in Sources */,
+				5B026AB31D942F1200563236 /* UIBarButtonItem.swift in Sources */,
 				5B6ED9281D93FD1D003C114B /* AppDelegate.swift in Sources */,
 				5B6ED9591D9403D8003C114B /* HBMeController.swift in Sources */,
 				5B6ED95F1D9411F0003C114B /* HBTabBar.swift in Sources */,

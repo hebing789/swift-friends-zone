@@ -26,7 +26,7 @@ class HBTabBarController: UITabBarController {
         
     }
 
-    func addChildViewController(vc:UIViewController,title:String,imgName:String) -> () {
+   private func addChildViewController(vc:UIViewController,title:String,imgName:String) -> () {
         
     
         vc.tabBarItem.image=UIImage(named: imgName)?.withRenderingMode(.alwaysOriginal)
@@ -42,7 +42,7 @@ class HBTabBarController: UITabBarController {
         vc.tabBarItem.badgeValue=nil
         vc.tabBarItem.badgeColor=UIColor.purple
         
-        let nav = UINavigationController(rootViewController: vc)
+        let nav = HBBaseNavController(rootViewController: vc)
         
         addChildViewController(nav)
         
@@ -53,7 +53,7 @@ class HBTabBarController: UITabBarController {
         
     }
 
-    func addChildViewControllers() -> () {
+   private func addChildViewControllers() -> () {
         
         addChildViewController(vc: HBHomeController(), title: "首页", imgName: "tabbar_home")
         addChildViewController(vc: HBMessageController(), title: "消息", imgName: "tabbar_message_center")

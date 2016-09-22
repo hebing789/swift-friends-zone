@@ -12,14 +12,22 @@ class HBHomeController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+       
+//        navigationItem.rightBarButtonItem=UIBarButtonItem(image: UIImage(named: "navigationbar_pop") , style: .done, target: self, action: #selector(push))
+//        navigationItem.rightBarButtonItem=UIBarButtonItem(title: "nihao", style: .done, target: self, action: #selector(push))//这样是可以的
+        
+//        navigationItem.rightBarButtonItem=UIBarButtonItem(image: (UIImage(named: "navigationbar_pop")), style: .done, target: self, action: #selector(push))
+        
+        navigationItem.rightBarButtonItem=UIBarButtonItem(title:"", imagName: "navigationbar_pop", tagert: self, actiong:  #selector(push))
     }
 
+    //按钮的监听事件
+    @objc private func push() -> () {
+        
+        navigationController?.pushViewController(HBTestViewController(), animated: true)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
