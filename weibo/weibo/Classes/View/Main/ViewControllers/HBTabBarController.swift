@@ -14,6 +14,13 @@ class HBTabBarController: UITabBarController {
         super.viewDidLoad()
         
 //        self.view.backgroundColor=UIColor.yellow
+        let tabbar = HBTabBar()
+        tabbar.centerClick={
+            print("中间按钮被点击了",self)
+        }
+        
+        self.setValue(tabbar, forKey: "tabBar")
+        
         
         addChildViewControllers()
         

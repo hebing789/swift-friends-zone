@@ -14,6 +14,7 @@
 		5B6ED9591D9403D8003C114B /* HBMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ED9581D9403D8003C114B /* HBMeController.swift */; };
 		5B6ED95B1D9403EF003C114B /* HBMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ED95A1D9403EF003C114B /* HBMessageController.swift */; };
 		5B6ED95D1D94042E003C114B /* HBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ED95C1D94042E003C114B /* HBTabBarController.swift */; };
+		5B6ED95F1D9411F0003C114B /* HBTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ED95E1D9411F0003C114B /* HBTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5B6ED9581D9403D8003C114B /* HBMeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBMeController.swift; sourceTree = "<group>"; };
 		5B6ED95A1D9403EF003C114B /* HBMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBMessageController.swift; sourceTree = "<group>"; };
 		5B6ED95C1D94042E003C114B /* HBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBTabBarController.swift; sourceTree = "<group>"; };
+		5B6ED95E1D9411F0003C114B /* HBTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 		5B6ED9451D93FF31003C114B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5B6ED95E1D9411F0003C114B /* HBTabBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				5B6ED95D1D94042E003C114B /* HBTabBarController.swift in Sources */,
 				5B6ED9281D93FD1D003C114B /* AppDelegate.swift in Sources */,
 				5B6ED9591D9403D8003C114B /* HBMeController.swift in Sources */,
+				5B6ED95F1D9411F0003C114B /* HBTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
