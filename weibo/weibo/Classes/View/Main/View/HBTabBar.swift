@@ -29,6 +29,7 @@ class HBTabBar: UITabBar {
         
         super.layoutSubviews()
         
+        //这个方法在controller中}viewdidload}执行完后才调用,而且,添加一个调用一个,controlelr共添加了4次,调用4次,可以找一个更合适的调用方法里面调用
         let width = self.bounds.width/5
         let hight = self.bounds.height
         var index = 0

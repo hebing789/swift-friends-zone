@@ -8,11 +8,15 @@
 
 import UIKit
 
-class HBHomeController: UITableViewController {
+class HBHomeController: HBBaseVistorController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        VisetorLoginView.updateInfor(tipText: "关注一些人,快回到这里看看有什么惊喜")
+//        updateInfo(tipText: "关注一些人,快回到这里看看有什么惊喜",imageName: nil)
+        
+
        
 //        navigationItem.rightBarButtonItem=UIBarButtonItem(image: UIImage(named: "navigationbar_pop") , style: .done, target: self, action: #selector(push))
 //        navigationItem.rightBarButtonItem=UIBarButtonItem(title: "nihao", style: .done, target: self, action: #selector(push))//这样是可以的

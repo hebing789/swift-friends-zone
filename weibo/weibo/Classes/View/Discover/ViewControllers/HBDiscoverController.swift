@@ -8,12 +8,13 @@
 
 import UIKit
 
-class HBDiscoverController: UITableViewController {
+class HBDiscoverController: HBBaseVistorController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        visitorview.updateInfo(tipText: "关注一些人快回到这里看看有什么惊喜", imageName: "visitordiscover_image_message")
 
-       
+       VisetorLoginView.updateInfor(tipText: "关注一些人快回到这里看看有什么惊喜", imagName: "visitordiscover_image_message")
         navigationItem.titleView=HBSearchButton.loadSearchView()
         
     }

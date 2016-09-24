@@ -8,16 +8,16 @@
 
 import UIKit
 
-class HBMessageController: UITableViewController {
+class HBMessageController: HBBaseVistorController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        
+        VisetorLoginView.updateInfor(tipText:"关注一些人快登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过这里看看有什么惊喜", imagName: "visitordiscover_image_message")
+//            "登录后，你的微博、相册、个人资料会显示在这里，展示给别人", imagName: "visitordiscover_image_profile")
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
 
     override func didReceiveMemoryWarning() {
