@@ -7,6 +7,7 @@ target 'weibo' do
 
   # Pods for weibo
     pod 'AFNetworking'
-	
+    pod ‘SDWebImage’
+    pod ’SVProgressHUD’
     pod ’SnapKit’
 end

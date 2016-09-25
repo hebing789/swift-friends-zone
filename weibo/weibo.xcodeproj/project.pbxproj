@@ -9,14 +9,19 @@
 /* Begin PBXBuildFile section */
 		5B026AAF1D942A5E00563236 /* HBBaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B026AAE1D942A5E00563236 /* HBBaseNavController.swift */; };
 		5B026AB11D942C6600563236 /* HBTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B026AB01D942C6600563236 /* HBTestViewController.swift */; };
-		5B026AB31D942F1200563236 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B026AB21D942F1200563236 /* UIBarButtonItem.swift */; };
 		5B026AB51D94351B00563236 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B026AB41D94351B00563236 /* SearchView.xib */; };
 		5B026AB71D94353900563236 /* HBSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B026AB61D94353900563236 /* HBSearchButton.swift */; };
-		5B026AB91D9435C400563236 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B026AB81D9435C400563236 /* UIView+extension.swift */; };
-		5B0B469D1D968FFF005B3608 /* UILable+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B469C1D968FFF005B3608 /* UILable+extension.swift */; };
-		5B0B469F1D96913E005B3608 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B469E1D96913E005B3608 /* UIButton+extension.swift */; };
 		5B0B46A11D969526005B3608 /* HBVistorLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B46A01D969526005B3608 /* HBVistorLoginView.swift */; };
 		5B0B46A31D9696AA005B3608 /* HBBaseVistorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B46A21D9696AA005B3608 /* HBBaseVistorController.swift */; };
+		5B0B46A71D97FC97005B3608 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B46A61D97FC97005B3608 /* Common.swift */; };
+		5B0B46AB1D97FD5F005B3608 /* HBUserAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B46AA1D97FD5F005B3608 /* HBUserAccountModel.swift */; };
+		5B0B46B51D97FF3D005B3608 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B46AF1D97FF3D005B3608 /* UIBarButtonItem.swift */; };
+		5B0B46B61D97FF3D005B3608 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B46B01D97FF3D005B3608 /* UIButton+extension.swift */; };
+		5B0B46B71D97FF3D005B3608 /* UILable+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B46B11D97FF3D005B3608 /* UILable+extension.swift */; };
+		5B0B46B81D97FF3D005B3608 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B46B21D97FF3D005B3608 /* UIView+extension.swift */; };
+		5B0B46B91D97FF3D005B3608 /* HBNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B46B41D97FF3D005B3608 /* HBNetWorkTools.swift */; };
+		5B0B46C31D980150005B3608 /* HBAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B46C11D980150005B3608 /* HBAuthViewController.swift */; };
+		5B0B46C41D980150005B3608 /* HBWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B46C21D980150005B3608 /* HBWelcomeController.swift */; };
 		5B6ED9281D93FD1D003C114B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ED9271D93FD1D003C114B /* AppDelegate.swift */; };
 		5B6ED9511D940227003C114B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6ED9501D940227003C114B /* Assets.xcassets */; };
 		5B6ED9551D9403A9003C114B /* HBDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ED9541D9403A9003C114B /* HBDiscoverController.swift */; };
@@ -32,14 +37,19 @@
 		4F14B86981659FEAF2649736 /* Pods-weibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weibo/Pods-weibo.debug.xcconfig"; sourceTree = "<group>"; };
 		5B026AAE1D942A5E00563236 /* HBBaseNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBBaseNavController.swift; sourceTree = "<group>"; };
 		5B026AB01D942C6600563236 /* HBTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBTestViewController.swift; sourceTree = "<group>"; };
-		5B026AB21D942F1200563236 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		5B026AB41D94351B00563236 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		5B026AB61D94353900563236 /* HBSearchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSearchButton.swift; sourceTree = "<group>"; };
-		5B026AB81D9435C400563236 /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
-		5B0B469C1D968FFF005B3608 /* UILable+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILable+extension.swift"; sourceTree = "<group>"; };
-		5B0B469E1D96913E005B3608 /* UIButton+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
 		5B0B46A01D969526005B3608 /* HBVistorLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBVistorLoginView.swift; sourceTree = "<group>"; };
 		5B0B46A21D9696AA005B3608 /* HBBaseVistorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBBaseVistorController.swift; sourceTree = "<group>"; };
+		5B0B46A61D97FC97005B3608 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		5B0B46AA1D97FD5F005B3608 /* HBUserAccountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBUserAccountModel.swift; sourceTree = "<group>"; };
+		5B0B46AF1D97FF3D005B3608 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
+		5B0B46B01D97FF3D005B3608 /* UIButton+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
+		5B0B46B11D97FF3D005B3608 /* UILable+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILable+extension.swift"; sourceTree = "<group>"; };
+		5B0B46B21D97FF3D005B3608 /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		5B0B46B41D97FF3D005B3608 /* HBNetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBNetWorkTools.swift; sourceTree = "<group>"; };
+		5B0B46C11D980150005B3608 /* HBAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBAuthViewController.swift; sourceTree = "<group>"; };
+		5B0B46C21D980150005B3608 /* HBWelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBWelcomeController.swift; sourceTree = "<group>"; };
 		5B6ED9241D93FD1D003C114B /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B6ED9271D93FD1D003C114B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B6ED9331D93FD1D003C114B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +83,34 @@
 				AF62791B67CA02E0D6ECA692 /* Pods-weibo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5B0B46AE1D97FF3D005B3608 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				5B0B46AF1D97FF3D005B3608 /* UIBarButtonItem.swift */,
+				5B0B46B01D97FF3D005B3608 /* UIButton+extension.swift */,
+				5B0B46B11D97FF3D005B3608 /* UILable+extension.swift */,
+				5B0B46B21D97FF3D005B3608 /* UIView+extension.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		5B0B46B31D97FF3D005B3608 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				5B0B46B41D97FF3D005B3608 /* HBNetWorkTools.swift */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
+		5B0B46C01D980150005B3608 /* AuthViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5B0B46C11D980150005B3608 /* HBAuthViewController.swift */,
+				5B0B46C21D980150005B3608 /* HBWelcomeController.swift */,
+			);
+			path = AuthViewController;
 			sourceTree = "<group>";
 		};
 		5B6ED91B1D93FD1D003C114B = {
@@ -119,6 +157,7 @@
 		5B6ED93A1D93FF31003C114B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5B0B46AA1D97FD5F005B3608 /* HBUserAccountModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -127,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				5B026AB01D942C6600563236 /* HBTestViewController.swift */,
+				5B0B46A61D97FC97005B3608 /* Common.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -134,10 +174,8 @@
 		5B6ED93C1D93FF31003C114B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				5B026AB21D942F1200563236 /* UIBarButtonItem.swift */,
-				5B026AB81D9435C400563236 /* UIView+extension.swift */,
-				5B0B469C1D968FFF005B3608 /* UILable+extension.swift */,
-				5B0B469E1D96913E005B3608 /* UIButton+extension.swift */,
+				5B0B46AE1D97FF3D005B3608 /* extension */,
+				5B0B46B31D97FF3D005B3608 /* tool */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -145,6 +183,7 @@
 		5B6ED93D1D93FF31003C114B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5B0B46C01D980150005B3608 /* AuthViewController */,
 				5B6ED9441D93FF31003C114B /* Main */,
 				5B6ED93E1D93FF31003C114B /* Discover */,
 				5B6ED9411D93FF31003C114B /* Home */,
@@ -420,21 +459,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B6ED9551D9403A9003C114B /* HBDiscoverController.swift in Sources */,
+				5B0B46B51D97FF3D005B3608 /* UIBarButtonItem.swift in Sources */,
 				5B6ED95B1D9403EF003C114B /* HBMessageController.swift in Sources */,
-				5B0B469D1D968FFF005B3608 /* UILable+extension.swift in Sources */,
 				5B026AAF1D942A5E00563236 /* HBBaseNavController.swift in Sources */,
+				5B0B46A71D97FC97005B3608 /* Common.swift in Sources */,
+				5B0B46B61D97FF3D005B3608 /* UIButton+extension.swift in Sources */,
 				5B026AB11D942C6600563236 /* HBTestViewController.swift in Sources */,
+				5B0B46B71D97FF3D005B3608 /* UILable+extension.swift in Sources */,
 				5B026AB71D94353900563236 /* HBSearchButton.swift in Sources */,
 				5B6ED9571D9403BF003C114B /* HBHomeController.swift in Sources */,
+				5B0B46B91D97FF3D005B3608 /* HBNetWorkTools.swift in Sources */,
 				5B0B46A31D9696AA005B3608 /* HBBaseVistorController.swift in Sources */,
-				5B026AB91D9435C400563236 /* UIView+extension.swift in Sources */,
 				5B6ED95D1D94042E003C114B /* HBTabBarController.swift in Sources */,
-				5B026AB31D942F1200563236 /* UIBarButtonItem.swift in Sources */,
+				5B0B46B81D97FF3D005B3608 /* UIView+extension.swift in Sources */,
 				5B6ED9281D93FD1D003C114B /* AppDelegate.swift in Sources */,
 				5B0B46A11D969526005B3608 /* HBVistorLoginView.swift in Sources */,
+				5B0B46C31D980150005B3608 /* HBAuthViewController.swift in Sources */,
+				5B0B46AB1D97FD5F005B3608 /* HBUserAccountModel.swift in Sources */,
 				5B6ED9591D9403D8003C114B /* HBMeController.swift in Sources */,
 				5B6ED95F1D9411F0003C114B /* HBTabBar.swift in Sources */,
-				5B0B469F1D96913E005B3608 /* UIButton+extension.swift in Sources */,
+				5B0B46C41D980150005B3608 /* HBWelcomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
