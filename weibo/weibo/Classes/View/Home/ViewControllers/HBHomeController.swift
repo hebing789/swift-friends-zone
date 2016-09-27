@@ -10,7 +10,7 @@ import UIKit
 
 import SVProgressHUD
 import YYModel
-
+private let cellId="HBHomeControllercell"
 class HBHomeController: HBBaseVistorController {
 
     //懒加载数据源数组
@@ -28,6 +28,8 @@ class HBHomeController: HBBaseVistorController {
         
         navigationItem.rightBarButtonItem=UIBarButtonItem(title:"", imagName: "navigationbar_pop", tagert: self, actiong:  #selector(push))
         
+        let nib = UINib(nibName:"HBHomeCell" , bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: cellId)
         homeViewModel.loadData { (success) in
             
             if !success{
@@ -69,7 +71,9 @@ extension HBHomeController {
     
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! HBHomeCell
         
         let staues = homeViewModel.statuesViewModelAry[indexPath.row]
         let s = staues.status

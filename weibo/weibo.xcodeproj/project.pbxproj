@@ -34,6 +34,8 @@
 		5BFBA17A1D9A675700F469BB /* HBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBA1791D9A675700F469BB /* HBStatus.swift */; };
 		5BFBA1811D9AA05000F469BB /* HBHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBA17F1D9AA05000F469BB /* HBHomeViewModel.swift */; };
 		5BFBA1821D9AA05000F469BB /* HBStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBA1801D9AA05000F469BB /* HBStatusViewModel.swift */; };
+		5BFBA1851D9AA9EE00F469BB /* HBHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBA1831D9AA9EE00F469BB /* HBHomeCell.swift */; };
+		5BFBA1861D9AA9EE00F469BB /* HBHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BFBA1841D9AA9EE00F469BB /* HBHomeCell.xib */; };
 		676316F11197417A447338EF /* Pods_weibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61BB52867031056661297419 /* Pods_weibo.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,8 @@
 		5BFBA1791D9A675700F469BB /* HBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBStatus.swift; sourceTree = "<group>"; };
 		5BFBA17F1D9AA05000F469BB /* HBHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBHomeViewModel.swift; sourceTree = "<group>"; };
 		5BFBA1801D9AA05000F469BB /* HBStatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBStatusViewModel.swift; sourceTree = "<group>"; };
+		5BFBA1831D9AA9EE00F469BB /* HBHomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBHomeCell.swift; sourceTree = "<group>"; };
+		5BFBA1841D9AA9EE00F469BB /* HBHomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBHomeCell.xib; sourceTree = "<group>"; };
 		61BB52867031056661297419 /* Pods_weibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF62791B67CA02E0D6ECA692 /* Pods-weibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-weibo/Pods-weibo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -240,6 +244,8 @@
 		5B6ED9421D93FF31003C114B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5BFBA1831D9AA9EE00F469BB /* HBHomeCell.swift */,
+				5BFBA1841D9AA9EE00F469BB /* HBHomeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B026AB51D94351B00563236 /* SearchView.xib in Resources */,
+				5BFBA1861D9AA9EE00F469BB /* HBHomeCell.xib in Resources */,
 				5B6ED9511D940227003C114B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +489,7 @@
 				5B026AB11D942C6600563236 /* HBTestViewController.swift in Sources */,
 				5B0B46B71D97FF3D005B3608 /* UILable+extension.swift in Sources */,
 				5B026AB71D94353900563236 /* HBSearchButton.swift in Sources */,
+				5BFBA1851D9AA9EE00F469BB /* HBHomeCell.swift in Sources */,
 				5B6ED9571D9403BF003C114B /* HBHomeController.swift in Sources */,
 				5B0B46B91D97FF3D005B3608 /* HBNetWorkTools.swift in Sources */,
 				5B0B46A31D9696AA005B3608 /* HBBaseVistorController.swift in Sources */,
