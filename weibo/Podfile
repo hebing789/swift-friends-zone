@@ -10,4 +10,5 @@ target 'weibo' do
     pod ‘SDWebImage’
     pod ’SVProgressHUD’
     pod ’SnapKit’
+    pod 'YYModel'
 end

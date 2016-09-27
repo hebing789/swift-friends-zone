@@ -8,24 +8,90 @@
 
 import UIKit
 
+import SVProgressHUD
+import YYModel
+
 class HBHomeController: HBBaseVistorController {
 
+    //懒加载数据源数组
+    lazy var statuses: [HBStatus] = [HBStatus]()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         VisetorLoginView.updateInfor(tipText: "关注一些人,快回到这里看看有什么惊喜")
-//        updateInfo(tipText: "关注一些人,快回到这里看看有什么惊喜",imageName: nil)
-        
 
-       
-//        navigationItem.rightBarButtonItem=UIBarButtonItem(image: UIImage(named: "navigationbar_pop") , style: .done, target: self, action: #selector(push))
-//        navigationItem.rightBarButtonItem=UIBarButtonItem(title: "nihao", style: .done, target: self, action: #selector(push))//这样是可以的
-        
-//        navigationItem.rightBarButtonItem=UIBarButtonItem(image: (UIImage(named: "navigationbar_pop")), style: .done, target: self, action: #selector(push))
         
         navigationItem.rightBarButtonItem=UIBarButtonItem(title:"", imagName: "navigationbar_pop", tagert: self, actiong:  #selector(push))
+        
+        loadData()
+        
+        
     }
+    
+    func loadData() -> () {
+        
 
+
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+                let paramters = ["access_token" : HBAuthViewModel.sharedAuthViewModel.useModel?.access_token ?? ""]
+        
+//        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+//        let paramters = ["access_token" : HBStatus.sharedAccountViewModel.userAccount?.access_token ?? ""]
+//        //通过网络工具类发送get请求
+
+//        print(path)
+        HBNetWorkTools.sharedTools.request(method: .GET, URLString: urlString, parameters: paramters) { (responsObject, error) in
+            
+            if error != nil {
+                
+                SVProgressHUD.showError(withStatus: errorTip)
+                return
+            }
+            
+            let dict = responsObject as! [String : Any]
+             guard let array = dict["statuses"] as? [[String : Any]] else{
+                
+                return
+            }
+            
+            //遍历数组  字典转模型 添加到数组中
+            //
+                        for item in array {
+//                            
+//                            let s = HBStatus(dict: item)
+//                            self.statuses.append(s)
+//
+                            let s = HBStatus()
+                            //通过YYModel方式来字典转模型
+                            s.yy_modelSet(with: item)
+                            //              let s = HMStatus(dict: item)
+                            self.statuses.append(s)
+
+                            s.yy_modelSet(with: item)
+                            //              let s = HMStatus(dict: item)
+                            self.statuses.append(s)
+                            
+                        }
+            
+                        //程序走到这个地方 表示模型数字已经有元素了
+                        //刷新tableView
+                        self.tableView.reloadData()
+
+            
+            
+            
+            
+            
+        }
+
+        
+
+
+    }
+    
     //按钮的监听事件
     @objc private func push() -> () {
         
@@ -37,71 +103,36 @@ class HBHomeController: HBBaseVistorController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
+  
 
+}
+
+///s数据源方法
+extension HBHomeController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.statuses.count
     }
+    
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = UITableViewCell()
+        
+        let s = statuses[indexPath.row]
+        
+        cell.textLabel?.text=s.text
+        
+        
         return cell
+        
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
+    
+    
+    
 }

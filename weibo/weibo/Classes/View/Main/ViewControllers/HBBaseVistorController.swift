@@ -7,11 +7,20 @@
 //
 
 import UIKit
+/*
+ 协议和代理的使用  完成了多继承
+ 1. 定义协议
+ 2. 遵守协议,指定代理
+ 3. 实现协议方法
+ */
 
+//多继承
+//OC有多继承吗? 如果没有 通过什么来替代?  协议
+//必选的协议方法 必须要实现 否则报错
 class HBBaseVistorController: UITableViewController,HBVistorLoginViewDelegate {
 
     
-    var useLogIn = false
+    var useLogIn = HBAuthViewModel.sharedAuthViewModel.useLogin
     
     lazy var VisetorLoginView:HBVistorLoginView = HBVistorLoginView()
     
@@ -30,8 +39,14 @@ class HBBaseVistorController: UITableViewController,HBVistorLoginViewDelegate {
     }
     
     func willlogin() {
-        print("用户将要登录")
-        print("~~~~~~~~~~~~~~~~~~~~~~")
+       
+        //使用push 还是 modal  人机交互 push 执行线性的操作就应该使用push 如果打断线性的操作就应该使用modal(模态)
+        //实例化导航视图控制器
+        let auth: HBAuthViewController = HBAuthViewController()
+        let nav  = UINavigationController(rootViewController: auth)
+        
+        
+        self.present(nav, animated: true, completion: nil)
 
         
     }

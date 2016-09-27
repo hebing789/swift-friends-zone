@@ -21,7 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let nav = UINavigationController(rootViewController: mainTabContrller)
         
         window?.backgroundColor=UIColor.white
-        window?.rootViewController=mainTabContrller
+//        window?.rootViewController=mainTabContrller
+//        window?.rootViewController=HBWelcomeController()
+        window?.rootViewController =
+            HBAuthViewModel.sharedAuthViewModel.useLogin ?
+                HBWelcomeController():HBTabBarController()
+        registNotifcation()
         window?.makeKeyAndVisible()
         
         
@@ -29,6 +34,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    //希望将根视图控制器的切换全部放在 AppDelegate  可以使用通知来完成 这种一对多的逻辑操作
+    //实际开发中不不建议大量使用通知
+    //1. 注册某通知 添加观察者
+    //2. 实现通知监听方法
+    //3. 在需要的地方发出通知
+    //4. 移除通知
+    
+    //注册通知
+    private func registNotifcation(){
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setRootViewController(n:)), name: NSNotification.Name(rawValue: KchangeRootViewController), object: nil)
+        
+    }
+    
+    func setRootViewController(n:NSNotification) -> () {
+        
+        if n.object == nil {
+            //设置根视图控制器
+            //tabbarVC
+            window?.rootViewController = HBTabBarController()
+        } else {
+            //欢迎页面
+            window?.rootViewController = HBWelcomeController()
+        }
+
+        
+        
+        
+    }
+    
+    //    //移除通知
+    //    //此处写移除通知没有意义
+    //    //代码格式 规定
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

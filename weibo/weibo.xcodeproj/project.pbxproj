@@ -30,6 +30,10 @@
 		5B6ED95B1D9403EF003C114B /* HBMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ED95A1D9403EF003C114B /* HBMessageController.swift */; };
 		5B6ED95D1D94042E003C114B /* HBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ED95C1D94042E003C114B /* HBTabBarController.swift */; };
 		5B6ED95F1D9411F0003C114B /* HBTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ED95E1D9411F0003C114B /* HBTabBar.swift */; };
+		5BFBA1781D981FFA00F469BB /* HBAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBA1771D981FFA00F469BB /* HBAuthViewModel.swift */; };
+		5BFBA17A1D9A675700F469BB /* HBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBA1791D9A675700F469BB /* HBStatus.swift */; };
+		5BFBA1811D9AA05000F469BB /* HBHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBA17F1D9AA05000F469BB /* HBHomeViewModel.swift */; };
+		5BFBA1821D9AA05000F469BB /* HBStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBA1801D9AA05000F469BB /* HBStatusViewModel.swift */; };
 		676316F11197417A447338EF /* Pods_weibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61BB52867031056661297419 /* Pods_weibo.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +64,10 @@
 		5B6ED95A1D9403EF003C114B /* HBMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBMessageController.swift; sourceTree = "<group>"; };
 		5B6ED95C1D94042E003C114B /* HBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBTabBarController.swift; sourceTree = "<group>"; };
 		5B6ED95E1D9411F0003C114B /* HBTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBTabBar.swift; sourceTree = "<group>"; };
+		5BFBA1771D981FFA00F469BB /* HBAuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBAuthViewModel.swift; sourceTree = "<group>"; };
+		5BFBA1791D9A675700F469BB /* HBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBStatus.swift; sourceTree = "<group>"; };
+		5BFBA17F1D9AA05000F469BB /* HBHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBHomeViewModel.swift; sourceTree = "<group>"; };
+		5BFBA1801D9AA05000F469BB /* HBStatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBStatusViewModel.swift; sourceTree = "<group>"; };
 		61BB52867031056661297419 /* Pods_weibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF62791B67CA02E0D6ECA692 /* Pods-weibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-weibo/Pods-weibo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,8 +98,8 @@
 			children = (
 				5B0B46AF1D97FF3D005B3608 /* UIBarButtonItem.swift */,
 				5B0B46B01D97FF3D005B3608 /* UIButton+extension.swift */,
-				5B0B46B11D97FF3D005B3608 /* UILable+extension.swift */,
 				5B0B46B21D97FF3D005B3608 /* UIView+extension.swift */,
+				5B0B46B11D97FF3D005B3608 /* UILable+extension.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -107,8 +115,8 @@
 		5B0B46C01D980150005B3608 /* AuthViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5B0B46C11D980150005B3608 /* HBAuthViewController.swift */,
 				5B0B46C21D980150005B3608 /* HBWelcomeController.swift */,
+				5B0B46C11D980150005B3608 /* HBAuthViewController.swift */,
 			);
 			path = AuthViewController;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				5B0B46AA1D97FD5F005B3608 /* HBUserAccountModel.swift */,
+				5BFBA1791D9A675700F469BB /* HBStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,6 +332,9 @@
 		5B6ED94D1D93FF31003C114B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5BFBA17F1D9AA05000F469BB /* HBHomeViewModel.swift */,
+				5BFBA1801D9AA05000F469BB /* HBStatusViewModel.swift */,
+				5BFBA1771D981FFA00F469BB /* HBAuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -458,10 +470,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BFBA17A1D9A675700F469BB /* HBStatus.swift in Sources */,
 				5B6ED9551D9403A9003C114B /* HBDiscoverController.swift in Sources */,
 				5B0B46B51D97FF3D005B3608 /* UIBarButtonItem.swift in Sources */,
 				5B6ED95B1D9403EF003C114B /* HBMessageController.swift in Sources */,
 				5B026AAF1D942A5E00563236 /* HBBaseNavController.swift in Sources */,
+				5BFBA1781D981FFA00F469BB /* HBAuthViewModel.swift in Sources */,
+				5BFBA1821D9AA05000F469BB /* HBStatusViewModel.swift in Sources */,
 				5B0B46A71D97FC97005B3608 /* Common.swift in Sources */,
 				5B0B46B61D97FF3D005B3608 /* UIButton+extension.swift in Sources */,
 				5B026AB11D942C6600563236 /* HBTestViewController.swift in Sources */,
@@ -474,6 +489,7 @@
 				5B0B46B81D97FF3D005B3608 /* UIView+extension.swift in Sources */,
 				5B6ED9281D93FD1D003C114B /* AppDelegate.swift in Sources */,
 				5B0B46A11D969526005B3608 /* HBVistorLoginView.swift in Sources */,
+				5BFBA1811D9AA05000F469BB /* HBHomeViewModel.swift in Sources */,
 				5B0B46C31D980150005B3608 /* HBAuthViewController.swift in Sources */,
 				5B0B46AB1D97FD5F005B3608 /* HBUserAccountModel.swift in Sources */,
 				5B6ED9591D9403D8003C114B /* HBMeController.swift in Sources */,

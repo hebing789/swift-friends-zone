@@ -20,6 +20,7 @@ class HBBaseNavController: UINavigationController {
         //如果高斯模糊不开,第一页整体颜色基本一样,开着,后面比较模糊
         //默认开启
 //        self.navigationBar.isTranslucent=false
+
         
         
         
