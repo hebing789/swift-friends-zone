@@ -14,7 +14,9 @@ import YYModel
 class HBHomeController: HBBaseVistorController {
 
     //懒加载数据源数组
-    lazy var statuses: [HBStatus] = [HBStatus]()
+//    lazy var statuses: [HBStatus] = [HBStatus]()
+    
+    lazy var homeViewModel :HBHomeViewModel=HBHomeViewModel()
     
     
     
@@ -26,70 +28,18 @@ class HBHomeController: HBBaseVistorController {
         
         navigationItem.rightBarButtonItem=UIBarButtonItem(title:"", imagName: "navigationbar_pop", tagert: self, actiong:  #selector(push))
         
-        loadData()
-        
-        
-    }
-    
-    func loadData() -> () {
-        
-
-
-        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-                let paramters = ["access_token" : HBAuthViewModel.sharedAuthViewModel.useModel?.access_token ?? ""]
-        
-//        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-//        let paramters = ["access_token" : HBStatus.sharedAccountViewModel.userAccount?.access_token ?? ""]
-//        //通过网络工具类发送get请求
-
-//        print(path)
-        HBNetWorkTools.sharedTools.request(method: .GET, URLString: urlString, parameters: paramters) { (responsObject, error) in
+        homeViewModel.loadData { (success) in
             
-            if error != nil {
-                
+            if !success{
                 SVProgressHUD.showError(withStatus: errorTip)
                 return
             }
             
-            let dict = responsObject as! [String : Any]
-             guard let array = dict["statuses"] as? [[String : Any]] else{
-                
-                return
-            }
-            
-            //遍历数组  字典转模型 添加到数组中
-            //
-                        for item in array {
-//                            
-//                            let s = HBStatus(dict: item)
-//                            self.statuses.append(s)
-//
-                            let s = HBStatus()
-                            //通过YYModel方式来字典转模型
-                            s.yy_modelSet(with: item)
-                            //              let s = HMStatus(dict: item)
-                            self.statuses.append(s)
-
-                            s.yy_modelSet(with: item)
-                            //              let s = HMStatus(dict: item)
-                            self.statuses.append(s)
-                            
-                        }
-            
-                        //程序走到这个地方 表示模型数字已经有元素了
-                        //刷新tableView
-                        self.tableView.reloadData()
-
-            
-            
-            
-            
+            self.tableView.reloadData()
             
         }
-
         
-
-
+        
     }
     
     //按钮的监听事件
@@ -114,16 +64,17 @@ extension HBHomeController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.statuses.count
+        return self.homeViewModel.statuesViewModelAry.count
     }
     
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
-        let s = statuses[indexPath.row]
+        let staues = homeViewModel.statuesViewModelAry[indexPath.row]
+        let s = staues.status
         
-        cell.textLabel?.text=s.text
+        cell.textLabel?.text=s?.text
         
         
         return cell
