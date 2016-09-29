@@ -33,3 +33,6 @@ func randomColor() -> UIColor {
     let b = CGFloat(arc4random() % 256) / 255.0
     return UIColor(red: r, green: g, blue: b, alpha: 1)
 }
+//定义屏幕宽度和高度
+let ScreenWidth = UIScreen.main.bounds.width
+let ScreenHeight = UIScreen.main.bounds.height
