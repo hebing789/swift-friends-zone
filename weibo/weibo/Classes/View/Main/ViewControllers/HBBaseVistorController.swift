@@ -21,6 +21,7 @@ class HBBaseVistorController: UITableViewController,HBVistorLoginViewDelegate {
 
     
     var useLogIn = HBAuthViewModel.sharedAuthViewModel.useLogin
+//    var useLogIn = false
     
     lazy var VisetorLoginView:HBVistorLoginView = HBVistorLoginView()
     

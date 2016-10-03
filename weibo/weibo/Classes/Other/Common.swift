@@ -11,10 +11,10 @@ import UIKit
 //同一个命名空间中所有的文件默认共享 并且不是在class 内部 就是一个全局
 //let client_id = "1017936454"
 //let client_secret = "662966e686ecc64b7b750d7eb8e10554"
-//let redirect_uri = "http://www.itheima.com"
+let redirect_uri = "http://www.itheima.com"
 
 ///更换账号
-let redirect_uri = "http://www.baidu.com"
+//let redirect_uri = "http://www.baidu.com"
 let client_id = "4036390044"
 let client_secret = "448937ddd868e8a924a88902216ded9f"
 
@@ -36,3 +36,6 @@ func randomColor() -> UIColor {
 //定义屏幕宽度和高度
 let ScreenWidth = UIScreen.main.bounds.width
 let ScreenHeight = UIScreen.main.bounds.height
+
+let navBarHeight:CGFloat = 64
+

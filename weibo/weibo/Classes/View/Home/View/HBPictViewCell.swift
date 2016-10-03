@@ -30,12 +30,12 @@ class HBPictViewCell: UICollectionView {
     override func awakeFromNib() {
         
              self.dataSource=self
-        self.backgroundColor=randomColor()
-        self.addSubview(testLabel)
+//        self.backgroundColor=randomColor()
+//        self.addSubview(testLabel)
         
-        testLabel.snp.makeConstraints { (make) in
-            make.center.equalTo(self)
-        }
+//        testLabel.snp.makeConstraints { (make) in
+//            make.center.equalTo(self)
+//        }
         
         //注册cell
         self.register(HBpicCollctionCell.self, forCellWithReuseIdentifier: cellID)
@@ -89,8 +89,20 @@ class HBpicCollctionCell: UICollectionViewCell {
     
     var pictureInfo: HBPictureInfor? {
         didSet {
-            let url = URL(string: pictureInfo?.thumbnail_pic ?? "")
+            var url = URL(string: pictureInfo?.wap_pic ?? "")
+            
+            if url!.absoluteString.hasSuffix(".gif")
+            {
+                url = URL(string: pictureInfo?.bmiddle_pic ?? "")
+            }
+            
+
+//            let url = URL(string: pictureInfo?.thumbnail_pic ?? "")
             imageView.sd_setImage(with: url)
+            //根据数据来设置是否显示gif的图片
+            //cell的复用
+            gificon.isHidden = !url!.absoluteString.hasSuffix(".gif")
+
         }
     }
     
@@ -104,6 +116,14 @@ class HBpicCollctionCell: UICollectionViewCell {
         imageView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.contentView.snp.edges)
         }
+        //添加gif 图片
+        self.contentView.addSubview(gificon)
+        //设置约束
+        gificon.snp.makeConstraints { (make) in
+            //右下角
+            make.bottom.right.equalTo(contentView)
+        }
+
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -123,5 +143,8 @@ class HBpicCollctionCell: UICollectionViewCell {
 
         return iv
     }()
+    
+    private lazy var gificon: UIImageView = UIImageView(image: #imageLiteral(resourceName: "timeline_image_gif"))
+
 }
 

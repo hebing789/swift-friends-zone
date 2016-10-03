@@ -23,6 +23,36 @@ class HBHomeController: HBBaseVistorController {
     
     lazy var homeViewModel :HBHomeViewModel=HBHomeViewModel()
     
+       let hbRefreshControl = HBRefreshControl()
+    //实例化小菊花视图
+    lazy var indiacitivitorView:UIActivityIndicatorView = {
+        let indictor = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+//        indictor.stopAnimating()
+        
+        return indictor
+        
+    }()
+    
+    private lazy var tipLabel: UILabel = {
+        let l = UILabel(title: "", textColor: UIColor.white, titleFont: 14)
+        //设置背景颜色
+        l.backgroundColor = UIColor.orange
+        //设置对齐
+        l.textAlignment = .center
+        l.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: 35)
+        l.isHidden = true
+        return l
+    }()
+    
+
+//    lazy var indicatorView : UIActivityIndicatorView = {
+//        let indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+//        //测试转动 , 应该在加载更多数据的时候就开始转动
+//        //什么时候执行静默加载
+//        // indicator.startAnimating()
+//        return indicator
+//        
+//    }()
 
     //这个方法只能在组头上加一个分割空间
 //    
@@ -57,22 +87,91 @@ class HBHomeController: HBBaseVistorController {
         
          tableView.rowHeight = 360.0
         
+        //设置tableView tableFooterView
+        tableView.tableFooterView = indiacitivitorView
+//        refreshControl=UIRefreshControl()
+        
+        //        //添加系统的刷新控件
+        //        refreshControl = UIRefreshControl()
+        //        //添加监听事件
+        //        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        
+        hbRefreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        self.view.addSubview(hbRefreshControl)
+
+        //添加到导航视图控制器的view上
+        self.tipLabel.frame.origin.y = navBarHeight - 35
+        self.navigationController?.view.addSubview(tipLabel)
+        //将tipLabel放到导航条的下面
+        //更改数组的顺序
+        self.navigationController?.view.insertSubview(tipLabel, belowSubview: self.navigationController!.navigationBar)
+
+        
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        loadData()
         //取消分割线,原来是有分割线的
         tableView.separatorStyle = .none
-        homeViewModel.loadData { (success) in
+        
+    }
+    
+    
+    func loadData() -> () {
+        homeViewModel.loadData(isPullup: self.indiacitivitorView.isAnimating) { (success,count) in
             
             if !success{
                 SVProgressHUD.showError(withStatus: errorTip)
                 return
             }
             
-           
+            
+            //执行lable的动画效果
+            if !self.indiacitivitorView.isAnimating {
+                //没有转动就执行提示动画
+                self.startTipLabelAnimation(count: count!)
+            }
+
+            //self.refreshControl?.endRefreshing()
+//            self.hbRefreshControl.refreshStatue = .Normal
+            //将结束动画封装成一个方法,让调用的意图更加清晰
+            self.hbRefreshControl.stopAnimation()
+
+
+//            self.refreshControl?.endRefreshing()
+            self.indiacitivitorView.stopAnimating()
             self.tableView.reloadData()
             
         }
         
+
+    }
+    //提示刷新了多少条数据
+    private func startTipLabelAnimation(count: Int) {
+        
+        //如果正在做动画就直接return
+        if self.tipLabel.isHidden == false {
+            return
+        }
+        //设置文字
+        self.tipLabel.text = count == 0 ? "没有新微博数据" : "有\(count)条新微博数据"
+        //执行动画效果
+        //动画执行前 修改alpha
+        self.tipLabel.isHidden = false
+        //在动画之前先记录之前的y值
+        let lastY = self.tipLabel.frame.origin.y
+        UIView.animate(withDuration: 1, animations: {
+            self.tipLabel.frame.origin.y = navBarHeight
+        }) { (_) in
+            //添加一个返回原位置的动画 需要延迟
+            UIView.animate(withDuration: 1, delay: 1, options: [], animations: {
+                self.tipLabel.frame.origin.y = lastY
+                }, completion: { (_) in
+                    self.tipLabel.isHidden = true
+            })
+        }
         
     }
+    
+
     
     //按钮的监听事件
     @objc private func push() -> () {
@@ -172,7 +271,27 @@ extension HBHomeController {
         return retweetedCellId
         
     }
+//    //将要显示最后一个cell的时候就开始执行静默加载
+//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        //将要显示倒数第二行并且 小菊花没有有转动的时候 才开始加载更多数据
+//        if indexPath.row == homeViewModel.viewmodelArray.count - 2 && indicatorView.isAnimating == false {
+//            indicatorView.startAnimating()
+//            print("开始执行静默加载数据")
+//            print("~~~~~~~~~~~~~~~~~~~~~~")
+//        }
+//    }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == self.homeViewModel.statuesViewModelAry.count - 2 && indiacitivitorView.isAnimating == false
+    {
+        indiacitivitorView.startAnimating()
+        loadData()
+        print("开始执行静默加载数据")
+        
+        }
+        
+    }
+
     
     
     

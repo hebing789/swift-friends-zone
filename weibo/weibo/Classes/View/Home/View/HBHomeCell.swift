@@ -7,6 +7,8 @@
 //
 
 import UIKit
+//使用分类中的方法的时候不需要导包 但是使用主类中的方法或者属性的时候就需要导包
+
 import SDWebImage
  let commonMargin: CGFloat = 8
 //图片之间的间距
@@ -62,8 +64,12 @@ class HBHomeCell: UITableViewCell {
         didSet {
             //设置视图的数据
             //iconView.sd_setImage(with: <#T##URL!#>)
-            timeLable.text = viewmodel?.status?.created_at
-            sourceLable.text = viewmodel?.status?.source
+//            timeLable.text = viewmodel?.status?.created_at
+            timeLable.text = viewmodel?.timeText
+
+//            sourceLable.text = viewmodel?.status?.source
+            sourceLable.text = viewmodel?.sourceText
+
             contentLable.text = viewmodel?.status?.text
             avatarView.image = viewmodel?.avatarImage
             memberView.image = viewmodel?.memberImage
@@ -116,6 +122,18 @@ class HBHomeCell: UITableViewCell {
         if count == 0 {
             return CGSize.zero
         }
+        if count == 1 {
+            //返回原比例的大小
+            //根据urlString 去沙盒中获取缓存的图片
+            //能否在这个地方就一定确保图片已经被缓存到沙盒中
+            let urlString = viewmodel?.pictureInfos?.first?.wap_pic ?? ""
+            let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: urlString)
+            let imageSize = image?.size
+//            return imageSize ?? CGSize(width: itemWidth, height: itemWidth)
+//            return imageSize!//图片frame是返回的挺大,但是图片不大
+            
+        }
+
         //4 张图片
         if count == 4 {
             let width = itemWidth * 2 + pictureCellMargin

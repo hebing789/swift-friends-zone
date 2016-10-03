@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
        window=UIWindow(frame: UIScreen.main.bounds)
-        let mainTabContrller = HBTabBarController()
+//        let mainTabContrller = HBTabBarController()
 //        可以对比着2中区别
 //        let nav = UINavigationController(rootViewController: mainTabContrller)
         

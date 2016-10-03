@@ -12,7 +12,15 @@ import UIKit
 private  let path = (NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last! as NSString) .appendingPathComponent("account.plist")
 class HBAuthViewModel: NSObject {
 
-    static  let sharedAuthViewModel:HBAuthViewModel = HBAuthViewModel()
+    //单例对象
+    static let sharedAuthViewModel: HBAuthViewModel = HBAuthViewModel()
+//    static let sharedAuthViewModel: HBAuthViewModel = {
+//        
+//        return HBAuthViewModel()
+//        
+//    }()
+    
+//    static  let sharedAuthViewModel:HBAuthViewModel = HBAuthViewModel()
     
     override init() {
         
@@ -79,11 +87,16 @@ class HBAuthViewModel: NSObject {
     
     func loadUseInforModel() -> HBUserAccountModel? {
         
-
-        let model = NSKeyedUnarchiver.unarchiveObject(withFile: path)
+//        if path == " "{
+//            
+//            return nil
+//        }
+        
+        print(path)
+        let model = (NSKeyedUnarchiver.unarchiveObject(withFile: path) ?? nil) as? HBUserAccountModel
         
         
-        return (model as? HBUserAccountModel)
+        return model
         
     }
     

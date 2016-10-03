@@ -13,6 +13,7 @@
 		5B026AB51D94351B00563236 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B026AB41D94351B00563236 /* SearchView.xib */; };
 		5B026AB71D94353900563236 /* HBSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B026AB61D94353900563236 /* HBSearchButton.swift */; };
 		5B0327851D9C0C3E0046DB58 /* HBRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B0327841D9C0C3E0046DB58 /* HBRetweetedCell.xib */; };
+		5B0713F61D9E969200EC7D1E /* HBRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0713F51D9E969200EC7D1E /* HBRefreshControl.swift */; };
 		5B0B46A11D969526005B3608 /* HBVistorLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B46A01D969526005B3608 /* HBVistorLoginView.swift */; };
 		5B0B46A31D9696AA005B3608 /* HBBaseVistorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B46A21D9696AA005B3608 /* HBBaseVistorController.swift */; };
 		5B0B46A71D97FC97005B3608 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B46A61D97FC97005B3608 /* Common.swift */; };
@@ -51,6 +52,7 @@
 		5B026AB41D94351B00563236 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		5B026AB61D94353900563236 /* HBSearchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSearchButton.swift; sourceTree = "<group>"; };
 		5B0327841D9C0C3E0046DB58 /* HBRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBRetweetedCell.xib; sourceTree = "<group>"; };
+		5B0713F51D9E969200EC7D1E /* HBRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBRefreshControl.swift; sourceTree = "<group>"; };
 		5B0B46A01D969526005B3608 /* HBVistorLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBVistorLoginView.swift; sourceTree = "<group>"; };
 		5B0B46A21D9696AA005B3608 /* HBBaseVistorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBBaseVistorController.swift; sourceTree = "<group>"; };
 		5B0B46A61D97FC97005B3608 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				5BFBA1831D9AA9EE00F469BB /* HBHomeCell.swift */,
+				5B0713F51D9E969200EC7D1E /* HBRefreshControl.swift */,
 				5BFBA1841D9AA9EE00F469BB /* HBHomeCell.xib */,
 				5B0327841D9C0C3E0046DB58 /* HBRetweetedCell.xib */,
 				5B00A3F11D9ACEDB0097B585 /* HBPictViewCell.swift */,
@@ -401,6 +404,7 @@
 				TargetAttributes = {
 					5B6ED9231D93FD1D003C114B = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = B98X4L36B7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -517,6 +521,7 @@
 				5B0B46C31D980150005B3608 /* HBAuthViewController.swift in Sources */,
 				5B0B46AB1D97FD5F005B3608 /* HBUserAccountModel.swift in Sources */,
 				5B6ED9591D9403D8003C114B /* HBMeController.swift in Sources */,
+				5B0713F61D9E969200EC7D1E /* HBRefreshControl.swift in Sources */,
 				5B6ED95F1D9411F0003C114B /* HBTabBar.swift in Sources */,
 				5B0B46C41D980150005B3608 /* HBWelcomeController.swift in Sources */,
 			);
@@ -622,6 +627,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = B98X4L36B7;
 				INFOPLIST_FILE = weibo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dd.weibo;
@@ -636,6 +642,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = B98X4L36B7;
 				INFOPLIST_FILE = weibo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dd.weibo;
