@@ -88,8 +88,10 @@ class HBHomeCell: UITableViewCell {
             
 
             //更新约束值
-            picViewWidth.constant = pSize.width
-            picViewHight.constant = pSize.height
+            picViewWidth.constant = pSize.pSize.width
+            picViewHight.constant = pSize.pSize.height
+            //设置cell的大小
+            picViewFlowLayOut.itemSize = pSize.itemSize
             
             //根据是否有配图调整顶部间距
             toolBarTopConst.constant = (count == 0 ? 0 : commonMargin)
@@ -116,11 +118,11 @@ class HBHomeCell: UITableViewCell {
     }
     
     //根据图片的张数来计算配图视图的大小
-    private func changePictureViewSize(count: Int) -> CGSize {
+    private func changePictureViewSize(count: Int) -> (pSize:CGSize,itemSize:CGSize) {
         
         //0张图片
         if count == 0 {
-            return CGSize.zero
+            return (CGSize.zero,CGSize.zero)
         }
         if count == 1 {
             //返回原比例的大小
@@ -131,20 +133,21 @@ class HBHomeCell: UITableViewCell {
             let imageSize = image?.size
 //            return imageSize ?? CGSize(width: itemWidth, height: itemWidth)
 //            return imageSize!//图片frame是返回的挺大,但是图片不大
+            return (imageSize!,imageSize!)
             
         }
 
         //4 张图片
         if count == 4 {
             let width = itemWidth * 2 + pictureCellMargin
-            return CGSize(width: width, height: width)
+            return (CGSize(width: width, height: width),CGSize(width: itemWidth, height: itemWidth))
         }
         //其他 1,2,3,5,6,7,8,9  -> 3 * n
         //已知个数 和 列数 来计算 函数
         //3个为1,4个为2(行数)
         let rowCount = CGFloat((count - 1) / 3 + 1)
         let height = rowCount * itemWidth + (rowCount - 1) * pictureCellMargin
-        return CGSize(width: maxWidth, height: height)
+        return (CGSize(width: maxWidth, height: height),CGSize(width: itemWidth, height: itemWidth))
     }
 
     
@@ -162,8 +165,8 @@ class HBHomeCell: UITableViewCell {
 
 //        self.backgroundColor=randomColor()
         self.backgroundColor = UIColor.white
-        
-        picViewFlowLayOut.itemSize = CGSize(width: itemWidth, height: itemWidth)
+        //设置配图视图的布局对象 不能直接写死 因为单张图片的itemSize是可变的
+//        picViewFlowLayOut.itemSize = CGSize(width: itemWidth, height: itemWidth)
         //设置间距
         //行间距 默认的间距: 10
         picViewFlowLayOut.minimumLineSpacing = pictureCellMargin
