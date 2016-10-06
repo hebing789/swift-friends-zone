@@ -63,14 +63,14 @@ class HBStatusViewModel: NSObject {
         //let dateString = "Thu Sep 29 10:26:58 +0800 2016"
         //Thu Sep 29 10:26:58 +0800 2016
         //1. 实例化日期格式对象
-        let dateFormater = DateFormatter()
+//        let dateFormater = DateFormatter()
         //2. 对象字符串设置格式符
-        dateFormater.dateFormat = "EEE MMM dd HH:mm:ss zzz yyyy"
+        sharedDateFormater.dateFormat = "EEE MMM dd HH:mm:ss zzz yyyy"
         //2.1 设置日期本地化信息, 真机上面转换会失败
         //设置什么本地化信息是根据字符串中包含的信息来设置
-        dateFormater.locale = Locale(identifier: "en")
+        sharedDateFormater.locale = Locale(identifier: "en")
         //3. 需要将日期字符串转换 日期(Date)对象
-        let creatDate = dateFormater.date(from: dateString)
+        let creatDate = sharedDateFormater.date(from: dateString)
         //如果创建的日期转换不成工就直接return一个空串
         guard let sinaDate = creatDate else {
             return ""
@@ -95,17 +95,17 @@ class HBStatusViewModel: NSObject {
                 }
             } else if calendar.isDateInYesterday(sinaDate) {
                 //昨天
-                dateFormater.dateFormat = "昨天 HH:mm"
-                return dateFormater.string(from: sinaDate)
+                sharedDateFormater.dateFormat = "昨天 HH:mm"
+                return sharedDateFormater.string(from: sinaDate)
             } else {
                 //几年内的其他时间
-                dateFormater.dateFormat = "MM-dd"
-                return dateFormater.string(from: sinaDate)
+                sharedDateFormater.dateFormat = "MM-dd"
+                return sharedDateFormater.string(from: sinaDate)
             }
         } else {
             //非今年
-            dateFormater.dateFormat = "yyyy-MM-dd"
-            return dateFormater.string(from: sinaDate)
+            sharedDateFormater.dateFormat = "yyyy-MM-dd"
+            return sharedDateFormater.string(from: sinaDate)
         }
     }
     
@@ -255,22 +255,22 @@ class HBStatusViewModel: NSObject {
      */
     
     private func isDateInThisYear(targetDate: Date) -> Bool {
-        let dateFormater = DateFormatter()
+//        let dateFormater = DateFormatter()
         //2. 对象字符串设置格式符
 //        dateFormater.dateFormat = "EEE MMM dd HH:mm:ss zzz yyyy"
         //2.1 设置日期本地化信息, 真机上面转换会失败
         //设置什么本地化信息是根据字符串中包含的信息来设置
-        dateFormater.locale = Locale(identifier: "en")
+        sharedDateFormater.locale = Locale(identifier: "en")
         //3. 需要将日期字符串转换 日期(Date)对象
         
         let currentDate = Date()
         //重新设置日期格式符
-        dateFormater.dateFormat = "yyyy"
+        sharedDateFormater.dateFormat = "yyyy"
         //如果创建的日期转换不成工就直接return一个空串
         //获取创建的年份
-        let creatYear = dateFormater.string(from: targetDate)
+        let creatYear = sharedDateFormater.string(from: targetDate)
         //获取当前的年份
-        let currentYear = dateFormater.string(from: currentDate)
+        let currentYear = sharedDateFormater.string(from: currentDate)
         //返回比较的结果
         return currentYear == creatYear
     }

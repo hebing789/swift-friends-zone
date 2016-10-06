@@ -80,10 +80,18 @@ class HBRefreshControl: UIControl {
     }
     
     private func setupUI() {
+        addSubview(backView)
+
         addSubview(tipLabel)
         addSubview(indicator)
         addSubview(arrowIcon)
+        indicator.color=UIColor.orange
         
+        backView.snp.makeConstraints { (make) in
+            
+            make.left.right.bottom.equalTo(self)
+
+        }
         //设置约束
         tipLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(self).offset(10)
@@ -150,6 +158,9 @@ class HBRefreshControl: UIControl {
     private lazy var tipLabel: UILabel = UILabel(title: "下拉刷新",textColor: UIColor.orange,titleFont: 14)
     //菊花按钮
     private lazy var indicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
+    
+    private lazy var backView = UIImageView(image:#imageLiteral(resourceName: "refreshbg") )
+
     
     deinit {
         self.scrollView?.removeObserver(self, forKeyPath: "contentOffset")

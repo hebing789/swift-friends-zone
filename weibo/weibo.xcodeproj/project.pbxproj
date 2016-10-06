@@ -27,6 +27,11 @@
 		5B0B46C41D980150005B3608 /* HBWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0B46C21D980150005B3608 /* HBWelcomeController.swift */; };
 		5B13CB161D9AB77A00AACA1A /* HBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B13CB151D9AB77A00AACA1A /* HBUser.swift */; };
 		5B13CB181D9ABD2500AACA1A /* HBPictureInfor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B13CB171D9ABD2500AACA1A /* HBPictureInfor.swift */; };
+		5B3BEC7E1DA6717000EE93C3 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BEC7D1DA6717000EE93C3 /* UIImage+extension.swift */; };
+		5B3BEC811DA677A100EE93C3 /* HBcomposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BEC801DA677A100EE93C3 /* HBcomposeView.swift */; };
+		5B3BEC851DA67A8C00EE93C3 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BEC841DA67A8C00EE93C3 /* UIImage+ImageEffects.m */; };
+		5B3BEC881DA688D700EE93C3 /* HBComposeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BEC871DA688D700EE93C3 /* HBComposeButton.swift */; };
+		5B3BEC8A1DA6A67400EE93C3 /* HBComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BEC891DA6A67400EE93C3 /* HBComposeViewController.swift */; };
 		5B6ED9281D93FD1D003C114B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ED9271D93FD1D003C114B /* AppDelegate.swift */; };
 		5B6ED9511D940227003C114B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6ED9501D940227003C114B /* Assets.xcassets */; };
 		5B6ED9551D9403A9003C114B /* HBDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ED9541D9403A9003C114B /* HBDiscoverController.swift */; };
@@ -66,6 +71,12 @@
 		5B0B46C21D980150005B3608 /* HBWelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBWelcomeController.swift; sourceTree = "<group>"; };
 		5B13CB151D9AB77A00AACA1A /* HBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBUser.swift; sourceTree = "<group>"; };
 		5B13CB171D9ABD2500AACA1A /* HBPictureInfor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBPictureInfor.swift; sourceTree = "<group>"; };
+		5B3BEC7D1DA6717000EE93C3 /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
+		5B3BEC801DA677A100EE93C3 /* HBcomposeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBcomposeView.swift; sourceTree = "<group>"; };
+		5B3BEC831DA67A8C00EE93C3 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		5B3BEC841DA67A8C00EE93C3 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		5B3BEC871DA688D700EE93C3 /* HBComposeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBComposeButton.swift; sourceTree = "<group>"; };
+		5B3BEC891DA6A67400EE93C3 /* HBComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBComposeViewController.swift; sourceTree = "<group>"; };
 		5B6ED9241D93FD1D003C114B /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B6ED9271D93FD1D003C114B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B6ED9331D93FD1D003C114B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +125,7 @@
 				5B0B46B01D97FF3D005B3608 /* UIButton+extension.swift */,
 				5B0B46B21D97FF3D005B3608 /* UIView+extension.swift */,
 				5B0B46B11D97FF3D005B3608 /* UILable+extension.swift */,
+				5B3BEC7D1DA6717000EE93C3 /* UIImage+extension.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -133,6 +145,25 @@
 				5B0B46C11D980150005B3608 /* HBAuthViewController.swift */,
 			);
 			path = AuthViewController;
+			sourceTree = "<group>";
+		};
+		5B3BEC7F1DA6775D00EE93C3 /* composeView */ = {
+			isa = PBXGroup;
+			children = (
+				5B3BEC801DA677A100EE93C3 /* HBcomposeView.swift */,
+				5B3BEC871DA688D700EE93C3 /* HBComposeButton.swift */,
+				5B3BEC891DA6A67400EE93C3 /* HBComposeViewController.swift */,
+			);
+			path = composeView;
+			sourceTree = "<group>";
+		};
+		5B3BEC821DA67A8C00EE93C3 /* UIImage+Effects */ = {
+			isa = PBXGroup;
+			children = (
+				5B3BEC831DA67A8C00EE93C3 /* UIImage+ImageEffects.h */,
+				5B3BEC841DA67A8C00EE93C3 /* UIImage+ImageEffects.m */,
+			);
+			path = "UIImage+Effects";
 			sourceTree = "<group>";
 		};
 		5B6ED91B1D93FD1D003C114B = {
@@ -208,6 +239,7 @@
 		5B6ED93D1D93FF31003C114B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5B3BEC7F1DA6775D00EE93C3 /* composeView */,
 				5B0B46C01D980150005B3608 /* AuthViewController */,
 				5B6ED9441D93FF31003C114B /* Main */,
 				5B6ED93E1D93FF31003C114B /* Discover */,
@@ -356,6 +388,7 @@
 				5BFBA17F1D9AA05000F469BB /* HBHomeViewModel.swift */,
 				5BFBA1801D9AA05000F469BB /* HBStatusViewModel.swift */,
 				5BFBA1771D981FFA00F469BB /* HBAuthViewModel.swift */,
+				5B3BEC821DA67A8C00EE93C3 /* UIImage+Effects */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -496,16 +529,20 @@
 			files = (
 				5B13CB161D9AB77A00AACA1A /* HBUser.swift in Sources */,
 				5BFBA17A1D9A675700F469BB /* HBStatus.swift in Sources */,
+				5B3BEC881DA688D700EE93C3 /* HBComposeButton.swift in Sources */,
 				5B00A3F21D9ACEDB0097B585 /* HBPictViewCell.swift in Sources */,
 				5B6ED9551D9403A9003C114B /* HBDiscoverController.swift in Sources */,
+				5B3BEC8A1DA6A67400EE93C3 /* HBComposeViewController.swift in Sources */,
 				5B0B46B51D97FF3D005B3608 /* UIBarButtonItem.swift in Sources */,
 				5B6ED95B1D9403EF003C114B /* HBMessageController.swift in Sources */,
 				5B026AAF1D942A5E00563236 /* HBBaseNavController.swift in Sources */,
 				5BFBA1781D981FFA00F469BB /* HBAuthViewModel.swift in Sources */,
 				5B13CB181D9ABD2500AACA1A /* HBPictureInfor.swift in Sources */,
+				5B3BEC811DA677A100EE93C3 /* HBcomposeView.swift in Sources */,
 				5BFBA1821D9AA05000F469BB /* HBStatusViewModel.swift in Sources */,
 				5B0B46A71D97FC97005B3608 /* Common.swift in Sources */,
 				5B0B46B61D97FF3D005B3608 /* UIButton+extension.swift in Sources */,
+				5B3BEC7E1DA6717000EE93C3 /* UIImage+extension.swift in Sources */,
 				5B026AB11D942C6600563236 /* HBTestViewController.swift in Sources */,
 				5B0B46B71D97FF3D005B3608 /* UILable+extension.swift in Sources */,
 				5B026AB71D94353900563236 /* HBSearchButton.swift in Sources */,
@@ -518,6 +555,7 @@
 				5B6ED9281D93FD1D003C114B /* AppDelegate.swift in Sources */,
 				5B0B46A11D969526005B3608 /* HBVistorLoginView.swift in Sources */,
 				5BFBA1811D9AA05000F469BB /* HBHomeViewModel.swift in Sources */,
+				5B3BEC851DA67A8C00EE93C3 /* UIImage+ImageEffects.m in Sources */,
 				5B0B46C31D980150005B3608 /* HBAuthViewController.swift in Sources */,
 				5B0B46AB1D97FD5F005B3608 /* HBUserAccountModel.swift in Sources */,
 				5B6ED9591D9403D8003C114B /* HBMeController.swift in Sources */,
@@ -632,6 +670,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dd.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = weibo/weiboBridge.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -647,6 +686,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dd.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = weibo/weiboBridge.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

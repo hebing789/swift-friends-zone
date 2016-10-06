@@ -39,3 +39,6 @@ let ScreenHeight = UIScreen.main.bounds.height
 
 let navBarHeight:CGFloat = 64
 
+//全局共用的日期处理对象
+let sharedDateFormater = DateFormatter()
+

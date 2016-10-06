@@ -11,4 +11,5 @@ target 'weibo' do
     pod ’SVProgressHUD’
     pod ’SnapKit’
     pod 'YYModel'
+    pod 'pop'
 end
